@@ -1,0 +1,28 @@
+﻿@model WebApplication56.Models.My_DTO
+@{
+    ViewBag.Title = "Home Page";
+
+}
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.js"></script>
+<script>
+
+</script>
+<div>
+    @using (Html.BeginForm())
+    {
+
+        <div class="form-group">
+            Choose a State
+            <div class="col-md-10">
+                @Html.ListBoxFor(model => model.Selections,  ViewBag.Items as SelectList);
+                @Html.ValidationMessageFor(model => model.Selections, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+
+    }
+</div>
